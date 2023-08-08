@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 for num in range(99):
-    print("{:2.0F}".format(num), end= ", ")
-print("{:2.0F}".format(99), end= "\n")
+    print("{:02d}".format(num), end=", ")
+print("{:02d}".format(99), end="\n")
