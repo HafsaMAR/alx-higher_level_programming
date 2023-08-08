@@ -13,4 +13,3 @@ elif abs(Last_digit % 10) < 6:
 else:
     print("Last digit of {:d} is {:d} and is greater than 5".format(
         number, Last_digit % 10))
-
