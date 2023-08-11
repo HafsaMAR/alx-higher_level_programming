@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
-import builtins
+import os
 
 def easy_print(message):
-    builtins.print(message, end='\n', flush=True)
+    os.write(1, message.encode())
 
-easy_print("#pythoniscool")
+easy_print("#pythoniscool\n")
