@@ -7,7 +7,7 @@ int is_palindrome(listint_t **head)
     half_1_node = *head;
     half_2_node = *head;
 
-    if (head == NULL || (*head)->next == NULL)
+    if (!head)
     {
         return (1);
     }
