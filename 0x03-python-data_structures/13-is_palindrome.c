@@ -9,7 +9,7 @@ int is_palindrome(listint_t **head)
 
     if (!head)
     {
-        return (1)
+        return (1);
     }
     while (current)
     {
