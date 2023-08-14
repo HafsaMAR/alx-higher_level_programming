@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+if __name__ == "__main__"
 import sys
 num_arguments = len(sys.argv)
 if num_arguments == 1:
