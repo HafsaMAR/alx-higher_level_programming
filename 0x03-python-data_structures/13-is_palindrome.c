@@ -7,7 +7,7 @@ int is_palindrome(listint_t **head)
     half_1_node = *head;
     half_2_node = *head;
 
-    if (!head)
+    if (!head || (*head)->next != NULL)
     {
         return (1);
     }
@@ -22,7 +22,7 @@ int is_palindrome(listint_t **head)
         j++;
     }
     j = 0;
-    while (n / 2 + 1 + j < n && half_2_node)
+    while (n / 2 + j  < n && half_2_node)
     {
         half_2_node = half_2_node->next;
         while (i < n / 2 - j)
