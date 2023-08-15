@@ -15,7 +15,7 @@ int is_palindrome(listint_t **head)
         current = current->next;
         n++;
     }
-    while (j <= n / 2)
+    while (j < n / 2)
     {
         if (list[j] != list[n - j - 1])
             return (0);
