@@ -15,11 +15,10 @@ int is_palindrome(listint_t **head)
         current = current->next;
         n++;
     }
-    while (j < n / 2)
+    for (; j < n / 2; j++)
     {
         if (list[j] != list[n - j - 1])
             return (0);
-        j++;
     }
 
     return (1);
