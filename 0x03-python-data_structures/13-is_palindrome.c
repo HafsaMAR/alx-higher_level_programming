@@ -16,7 +16,7 @@ int is_palindrome(listint_t **head)
         current = current->next;
         n++;
     }
-    while (j < n / 2)
+    while (j < n / 2 + 1)
     {
         half_2_node = half_2_node->next;
         j++;
