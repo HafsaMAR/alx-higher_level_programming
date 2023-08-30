@@ -9,14 +9,14 @@ class Square:
     def __init__(self, size=0, position=(0, 0)):
         """Initialize the size of the square"""
         self.__size = size
-        self.postion = position
+        self.__postion = position
 
     @property
     def size(self):
         """Public instance method that returns the current square size"""
 
         return self.__size
-
+    @property
     def postion(self):
 
         return self.__postion
@@ -28,7 +28,7 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
+    @postion.setter
     def postion(self, value):
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError(
