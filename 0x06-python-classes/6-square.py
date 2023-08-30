@@ -48,6 +48,7 @@ class Square:
             print()
         x, y = self.postion
         for _ in range(self.size):
-            print(' ' * x + "#" * self.size)
+            print(' ' * x)
+            print("#" * self.size)
         for _ in range(y):
             print()
