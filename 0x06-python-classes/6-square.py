@@ -16,10 +16,6 @@ class Square:
         """Public instance method that returns the current square size"""
 
         return self.__size
-    @property
-    def postion(self):
-
-        return self.__postion
 
     @size.setter
     def size(self, value):
@@ -28,8 +24,22 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
+    @property
+    def postion(self):
+
+        return self.__postion
+
     @postion.setter
     def postion(self, value):
+        """Setter for position.
+
+        Args:
+        value (tuple): position of the square.
+
+        Raise:
+            TypeError: if value is not a tuple of positive integers
+        """
         if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError(
                 "position must be a tuple of 2 positive integers")
@@ -44,6 +54,10 @@ class Square:
         return self.__size**2
 
     def my_print(self):
+        """
+        Public instance method that prints in stdout the square using #,
+        while printing spaces fir the position of the square
+        """
         if self.size == 0:
             print()
         else:
@@ -51,4 +65,3 @@ class Square:
                 print("\n")
             for _ in range(self.size):
                 print(' ' * self.postion[0] + "#" * self.size)
-        
