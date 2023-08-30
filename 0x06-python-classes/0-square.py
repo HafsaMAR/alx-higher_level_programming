@@ -2,6 +2,7 @@
 
 """This module define a class Square"""
 
+
 class Square:
     """create and empty class"""
 
