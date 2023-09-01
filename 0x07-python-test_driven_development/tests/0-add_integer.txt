@@ -31,3 +31,13 @@ Now use it:
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer
+    
+    >>> add_integer(5, 'school')
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer('school', 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
