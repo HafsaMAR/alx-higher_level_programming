@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-class Myclass:
-    func_time_call = -1
 def magic_string():
-    Myclass.func_time_call +=1
-    return "BestSchool, " * Myclass.func_time_call + "BestSchool"
+    magic_string.func_time_call = getattr(magic_string, "func_time_call", 0) + 1
+    return ", ".join(["BestSchool" for _ in range(magic_string.func_time_call)])
