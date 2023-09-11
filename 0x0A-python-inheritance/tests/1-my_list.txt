@@ -2,7 +2,7 @@ the ''1-my_list'' module
 ============================
 
 Using ''print_sorted()'' from ''1-my_list''
------------
+-------------------------------------------
 
     >>> MyList = __import__('1-my_list').MyList
 
