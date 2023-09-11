@@ -3,6 +3,7 @@
 """Module for rectange class that inherits from BaseGeometry"""
 BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """Rectangle class that inherits from baseGeometry superclass
     """
@@ -20,4 +21,3 @@ class Rectangle(BaseGeometry):
 
         self.__width = width
         self.__height = height
-
