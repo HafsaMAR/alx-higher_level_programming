@@ -13,12 +13,12 @@ def add_item(arg):
         arg: argment passed
     """
     filename = "add_item.json"
-    arg_list = load_from_json_file(filename)
-    """try:
-        
+    try:
+        arg_list = load_from_json_file(filename)
+    
     except FileNotFoundError:
         arg_list = []
-"""
+
     for i in range(1, len(arg)):
         arg_list.append(arg[i])
         save_to_json_file(arg_list, filename)
