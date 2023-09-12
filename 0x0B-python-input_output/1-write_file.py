@@ -15,5 +15,4 @@ def write_file(filename="", text=""):
     Return: number if characters written
     """
     with open(filename, "w", encoding="UTF8") as f:
-        f.write(text)
-        return f.seek(0, 2)
+        return f.write(text)
