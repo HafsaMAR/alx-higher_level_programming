@@ -7,7 +7,7 @@ def pascal_triangle(n):
     """
     return list of lists of integers representing
     the triangle of pascal
-    
+
     Args:
         n (int): the number
     """
