@@ -65,3 +65,24 @@ class Base:
         dummy = cls(**dictionary)
         dummy.update(**dictionary)
         return dummy
+    
+    @classmethod
+    def load_from_file(cls):
+        """Function that loads dictionaries from json file and
+        return list of dictionaries stores
+        
+        Args:
+            cls(Rectangle/Square): class
+            
+        Returns:
+            list of dictionaries
+        """
+        try:
+            with open(cls.__name__ + ".json", "r") as file:
+                json_string = file.read()
+                json_dictionaries = cls.from_json_string(json_string)
+                instances = [cls.create(**d) for d in json_dictionaries]
+                return instances
+        except (FileNotFoundError, PermissionError) as e:
+            return []
+        
