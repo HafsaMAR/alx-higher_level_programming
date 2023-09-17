@@ -151,3 +151,32 @@ class Rectangle(Base):
         for i, arg in enumerate(args):
             if i < len(attributes):
                 setattr(self, attributes[i], arg)
+    def update(self, *args, **kwargs):
+        """Updates the attributes value using either keyworded or
+        none-keyworded arguments
+        
+        ARGS:
+            *args: non-keyworded variable length argument list
+            **kwargs: keyworded variable length of arguments
+        """
+        if args and len(args) > 0:
+            self.update(args)
+        elif kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+        
+    def to_dictionary(self):
+        """
+        Creates a dictionary representation a Rectangle
+
+        Returns:
+        dictionary representation of the Rectangle
+        """
+
+        return {"id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y}
+
