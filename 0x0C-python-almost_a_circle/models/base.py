@@ -5,6 +5,8 @@
 
 import json
 import csv
+from models.rectangle import Rectangle
+from models.square import Square
 
 class Base:
     """Base class
@@ -90,15 +92,32 @@ class Base:
                 return instances
         except (FileNotFoundError, PermissionError) as e:
             return []
-    # @classmethod
-    # def save_to_file_csv(cls, list_objs):
-    #     """save into a csv file
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save into a csv file
         
-    #     Args:
-    #         list_objs: object list
-    #     """
-    #     with open(cls.__name__ + ".csv", "w") as fcsv:
-    #         if cls.__name__ == "Rectangle":
-    #             writer = csv.writer(fcsv)
-    #             for item in list_objs:
-    #                 writer.writerow()
+        Args:
+            list_objs: object list
+        """
+        with open(cls.__name__ + ".csv", "w") as fcsv:
+            writer = csv.writer(fcsv)
+            if cls.__name__ == "Rectangle":
+                for item in list_objs:
+                    writer.writerow([item.id, item.width, item.height, item.x, item.y])
+            elif cls.__name__ == 'Square':
+                writer.writerow([item.id, item.size, item.x, item.y])
+        
+    @classmethod
+    def load_from_file_csv(cls):
+        obj = []
+        try:
+            with open(cls.__name__ + 'csv', 'r') as csvfile:
+                reader = csv.reader(csvfile)
+                for row in reader:
+                    if cls.__name__ == 'Rectangle':
+                        obj.append(cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0])))
+                    elif cls.__name__ == 'Square':
+                        obj.append(cls(int(row[1]), int(row[2]), int(row[3]), int(row[0])))
+        except FileNotFoundError:
+            pass
+        return obj
