@@ -90,15 +90,15 @@ class Base:
                 return instances
         except (FileNotFoundError, PermissionError) as e:
             return []
-    @classmethod
-    def save_to_file_csv(cls, list_objs):
-        """save into a csv file
+    # @classmethod
+    # def save_to_file_csv(cls, list_objs):
+    #     """save into a csv file
         
-        Args:
-            list_objs: object list
-        """
-        with open(cls.__name__ + ".csv", "w") as fcsv:
-            if cls.__name__ == "Rectangle":
-                writer = csv.writer(fcsv)
-                for item in list_objs:
-                    writer.writerow()
+    #     Args:
+    #         list_objs: object list
+    #     """
+    #     with open(cls.__name__ + ".csv", "w") as fcsv:
+    #         if cls.__name__ == "Rectangle":
+    #             writer = csv.writer(fcsv)
+    #             for item in list_objs:
+    #                 writer.writerow()
