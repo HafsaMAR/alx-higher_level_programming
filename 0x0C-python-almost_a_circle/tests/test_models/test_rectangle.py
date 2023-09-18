@@ -132,11 +132,12 @@ class test_Rectangle(unittest.TestCase):
         self.assertEqual(r2.width, 1)
         self.assertEqual(r2.x, 2)
         r2.update(y=1, width=2, x=3, id=89)
-        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.width, 2)
         self.assertEqual(r2.id, 89)
         self.assertEqual(r2.y, 1)
 
     def test_to_dictionary(self):
-        r1 = Rectangle(89, 2, 3, 4, 5)
+        r1 = Rectangle(10, 10)
+        r1.update(89, 2, 3, 4, 5)
         r1_dictionary = r1.to_dictionary()
         self.assertEqual(r1_dictionary, {'id': 89, 'width': 2, 'height': 3, 'x': 4, 'y': 5})

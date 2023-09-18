@@ -140,17 +140,7 @@ class Rectangle(Base):
         h = self.__height
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {w}/{h}"
     
-    def update(self, *args):
-        """
-        Methode that updates the order of the parameters passed
-        
-        Args:
-            *args: no-keyworded arguments
-        """
-        attributes = ["id", "width", "height", "x", "y"]
-        for i, arg in enumerate(args):
-            if i < len(attributes):
-                setattr(self, attributes[i], arg)
+    
     def update(self, *args, **kwargs):
         """Updates the attributes value using either keyworded or
         none-keyworded arguments
@@ -159,8 +149,11 @@ class Rectangle(Base):
             *args: non-keyworded variable length argument list
             **kwargs: keyworded variable length of arguments
         """
-        if args and len(args) > 0:
-            self.update(args)
+        if args is not None and len(args) is not 0:
+            attributes = ["id", "width", "height", "x", "y"]
+            for i, arg in enumerate(args):
+                if i < len(attributes):
+                    setattr(self, attributes[i], arg)
         elif kwargs:
             for key, value in kwargs.items():
                 if hasattr(self, key):
