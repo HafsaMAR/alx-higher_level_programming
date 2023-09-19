@@ -15,7 +15,9 @@ class Square(Rectangle):
             y (int): 
             x (int): 
         """
+        self.__size = size
         super().__init__(size, size, x, y, id)
+        
     
     def __str__(self):
         """
