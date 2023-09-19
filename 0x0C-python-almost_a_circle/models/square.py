@@ -2,13 +2,11 @@
 
 """Module for the Class Square inheriting from Rectangle"""
 
-from typing import TYPE_CHECKING
-if TYPE_CHECKING:
-    from models.rectangle import Rectangle
+from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """Square Class"""
-    def __init__(self, size, x=0, y=0, id=None) -> None:
+    def __init__(self, size, x=0, y=0, id=None):
         """
         Initialization of the class attribute
         
@@ -17,7 +15,6 @@ class Square(Rectangle):
             y (int): 
             x (int): 
         """
-        self.__size = size
         super().__init__(size, size, x, y, id)
     
     def __str__(self):
