@@ -1,20 +1,16 @@
 #!/usr/bin/python3
-""" 0-main """
-from models.base import Base
+""" 10-main """
+from models.square import Square
 
 if __name__ == "__main__":
 
-    b1 = Base()
-    print(b1.id)
+    s1 = Square(5)
+    print(s1)
+    print(s1.size)
+    s1.size = 10
+    print(s1)
 
-    b2 = Base()
-    print(b2.id)
-
-    b3 = Base()
-    print(b3.id)
-
-    b4 = Base(12)
-    print(b4.id)
-
-    b5 = Base()
-    print(b5.id)
+    try:
+        s1.size = "9"
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
