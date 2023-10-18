@@ -1,4 +1,4 @@
-
+mysql -u root -p
 -- Use the information_schema database
 USE information_schema;
 
