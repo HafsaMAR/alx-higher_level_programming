@@ -8,21 +8,22 @@ class Rectangle {
   }
 
   print () {
-    if (this.Width && this.height){
-    for (let i = 0; i < this.height; i++) {
-      console.log('X'.repeat(this.Width));
+    if (this.Width && this.height) {
+      for (let i = 0; i < this.height; i++) {
+        console.log('X'.repeat(this.Width));
+      }
     }
-  }}
+  }
 
   rotate () {
-    if (this.Width && this.height){
-        [this.Width, this.height] = [this.height, this.Width]
+    if (this.Width && this.height) {
+      [this.Width, this.height] = [this.height, this.Width];
     }
   }
 
   double () {
     if (this.Width && this.height) {
-        [this.Width, this.height] = [this.Width * 2, this.height * 2]
+      [this.Width, this.height] = [this.Width * 2, this.height * 2];
     }
   }
 }
