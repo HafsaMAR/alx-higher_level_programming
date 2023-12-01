@@ -3,6 +3,6 @@
 url=$1
 
 #Send request to URL and save response to body variable
-curl -sI "$url" | grep Content-Length | cut -d' ' -f2
+curl -sI "$1" | grep Content-Length | cut -d' ' -f2
 
 
