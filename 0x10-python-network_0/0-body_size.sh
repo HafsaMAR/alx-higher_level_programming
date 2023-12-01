@@ -3,7 +3,7 @@
 url=$1
 
 #Send request to URL and save response to body variable
-response=$(curl -s $url)
+response=$(curl -sI "$url" | awk '/Content-Length/ {print $2}' | tr -d '\r')
 
 #Get size of response body bytes
 size=$(echo -n "$response" | wc -c)
