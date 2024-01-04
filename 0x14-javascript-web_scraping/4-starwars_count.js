@@ -8,20 +8,16 @@ request(url, function (_error, response, rawBody) {
   const body = JSON.parse(rawBody);
   const films = body.results;
 
-  const characters = films.map(function (film) {
-    return film.characters
-      .map(
-        function (url) {
-          return url === 'https://swapi-api.alx-tools.com/api/people/18/';
-        }
-      )
-      .filter(function (element) { return element; }).length;
-  });
+  let count = 0;
+  for (const film of films) {
+    const characters = film.characters;
 
-  console.log(
-    characters.reduce(
-      function (acc, curr) { return acc + curr; },
-      0
-    )
-  );
+    for (const character of characters) {
+      if (character === 'https://swapi-api.alx-tools.com/api/people/18/') {
+        count++;
+      }
+    }
+  }
+
+  console.log(count);
 });
