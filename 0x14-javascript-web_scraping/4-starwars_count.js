@@ -4,7 +4,11 @@ const request = require('request');
 
 const url = process.argv[2];
 
-request(url, function (_error, response, rawBody) {
+request(url, function (error, _response, rawBody) {
+  if (error) {
+    console.log(error);
+    return;
+  }
   const body = JSON.parse(rawBody);
   const films = body.results;
 
@@ -13,11 +17,10 @@ request(url, function (_error, response, rawBody) {
     const characters = film.characters;
 
     for (const character of characters) {
-      if (character === 'https://swapi-api.alx-tools.com/api/people/18/') {
+      if (character.match(/18/g)) {
         count++;
       }
     }
   }
-
   console.log(count);
 });
