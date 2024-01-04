@@ -12,5 +12,5 @@ request(url, function (error, _response, body) {
     return;
   }
 
-  writeFile(path, body, () => {})
+  writeFile(path, body, () => {});
 });
